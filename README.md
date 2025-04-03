@@ -32,7 +32,7 @@
 
 ```bash
 git clone <リポジトリURL>
-cd next-authjs-supabase-starter
+cd next-authjs-supabase-liff-starter
 ```
 
 ### 2. オールインワンセットアップ（推奨）
