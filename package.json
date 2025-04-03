@@ -1,0 +1,45 @@
+{
+  "name": "next-authjs-supabase-starter",
+  "author": {
+    "name": "takeshi"
+  },
+  "version": "0.1.0",
+  "private": true,  "scripts": {
+    "dev": "next dev --experimental-https --experimental-https-key ./certificates/localhost-key.pem --experimental-https-cert ./certificates/localhost.pem",
+    "dev:http": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "setup:https": "bash ./setup-https.sh",
+    "supabase:start": "npx supabase start",
+    "supabase:stop": "npx supabase stop",
+    "supabase:status": "npx supabase status",
+    "supabase:studio": "open http://127.0.0.1:54323",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "db:reset": "prisma migrate reset",
+    "setup:all": "if [ ! -f .env.local ]; then cp .env .env.local; fi && pnpm install && pnpm setup:https && pnpm prisma generate && pnpm supabase:start && pnpm db:migrate"
+  },
+  "dependencies": {
+    "@line/liff": "^2.24.0",
+    "@prisma/client": "^6.5.0",
+    "next": "15.2.4",
+    "next-auth": "^4.24.10",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4",
+    "prisma": "^6.5.0",
+    "supabase": "^2.20.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
